@@ -4,8 +4,6 @@
  */
 package UI;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedInputStream;
@@ -262,7 +260,7 @@ public class FilesCompressor extends javax.swing.JFrame {
 
     private void aboutTheAppActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutTheAppActionPerformed
         String text="1.- Select the folder with the files you want to zip through "
-        + "the 'File' menu -> 'Select folder'\n2.- After that, you will see"
+        + "the 'File' menu -> 'Select folder'\n2.- After that, you will see "
         + "all the files from the folder in the JListArea. So, select the files you "
         + "want to zip individually with Ctrl + Right click\n3.- Finally, press the button 'Zip files'"
         + "and simultaneosly, you will see the progress in the progress bar.\nTake into account "
@@ -279,7 +277,10 @@ public class FilesCompressor extends javax.swing.JFrame {
             for (File file : filesList) {
                 fileNames.add(file.getName());
             }
-            filesModel.addAll(fileNames);
+            //filesModel.addAll(fileNames);
+            for (int i = 0; i < fileNames.size(); i++){
+                filesModel.addElement(fileNames.get(i));
+            }
         }
     }//GEN-LAST:event_selectFolderMenuActionPerformed
 
